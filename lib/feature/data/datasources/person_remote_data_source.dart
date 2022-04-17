@@ -28,7 +28,6 @@ class PersonRemoteDataSourceImpl implements PersonRemoteDataSource {
   Future<List<PersonModel>> searchPerson(String query) => _getPersonFromUrl('https://rickandmortyapi.com/api/character/?name=$query');
 
   Future<List<PersonModel>> _getPersonFromUrl(String url) async {
-    print(url);
     final response = await client.get(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
